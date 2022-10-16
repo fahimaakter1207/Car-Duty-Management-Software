@@ -1,0 +1,176 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Trivia Management Software | IT Department :: Dana Group</title>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstrap-css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- //bootstrap-css -->
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <!-- font CSS -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="css/font.css" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <script src="js/jquery2.0.3.min.js"></script>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+    <!--Icons-->
+    <script src="js/lumino.glyphs.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <section id="container">
+            <!--header start-->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="AdminDashboard"><span>Trivia </span>Aviation</a>
+                        <ul class="user-menu">
+                            <li class="dropdown pull-right">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    <img class="user-img" alt="" src="images/user.jpg">
+                                    <span class="username">
+                                        <asp:Label ID="lblUserName" runat="server" Text="Label"></asp:Label>
+                                    </span>
+                                    <b class="caret"></b>
+                                </a>
+                                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+                                User <span class="caret"></span></a>--%>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">
+                                        <svg class="glyph stroked male-user">
+                                            <use xlink:href="#stroked-male-user"></use></svg>
+                                        Profile</a></li>
+                                    <li><a href="#">
+                                        <svg class="glyph stroked gear">
+                                            <use xlink:href="#stroked-gear"></use></svg>
+                                        Settings</a></li>
+                                    <li><a href="logout.aspx">
+                                        <svg class="glyph stroked cancel">
+                                            <use xlink:href="#stroked-cancel"></use></svg>
+                                        Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+            <!--header end-->
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar" class="nav-collapse">
+                    <!-- sidebar menu start-->
+                    <div class="leftside-navigation">
+                        <ul class="sidebar-menu" id="nav-accordion">
+                            <li>
+                                <a href="AdminDashboard">
+                                    <i class="fa fa-dashboard"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa fa-wrench"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="ManageUsers_Admin">Manage Users</a></li>
+                                    <%--<li><a href="ManageVehicle">Manage Vehicle</a></li>--%>
+                                    <li><a href="#">Manage Drivers</a></li>
+                                    <li><a href="ManageBankInfo_Admin">Bank Information</a></li>
+                                    <li><a href="ManageRMInfo_Admin">Manage RM</a></li>
+                                    <%-- <li><a href="ManageBankDutyUser">Manage Bank Duty User </a></li>--%>
+                                    <li><a href="ManageDutyRate_Admin">Manage Duty Rate</a></li>
+                                    <li><a href="ManageOddTime_Admin">Manage Odd Time</a></li>
+                                </ul>
+                            </li>
+
+                            <%--<li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa fa-th-large"></i>
+                                    <span>Operations</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="ManageBankDuty">Manage Bank Duty</a></li>
+                                    <li><a href="ManageDutyDisburce">Duty Disburse</a></li>
+                                    <li><a href="#">Manage Invoice</a></li>
+                                </ul>
+                            </li>--%>
+
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class=" fa fa-bar-chart-o"></i>
+                                    <span>Reports</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="ManageDutyDisburce_Admin">Duty Disburse</a></li>
+                                    <li><a href="CompletedDuty_Admin">Completed Bank Duty</a></li>
+                                    <li><a href="CancelBankDuty_Admin">Canceled Bank Duty</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="logout">
+                                    <i class="fa fa-power-off"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+            <!--main content start-->
+            <section id="main-content">
+                <section class="wrapper">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </section>
+
+                <div class="footer">
+                    <div class="wthree-copyright">
+                        <p style="font-size: x-small;">© 2018 DanaIT Assests Management Software | Design & Developed by :<a href="http://www.danagrpbd.com"> Dana IT ®</a></p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!--main content end-->
+        </section>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery.slimscroll.js"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+        <%--<script src="js/jquery.fileupload.js"></script>--%>
+        <script src="js/jquery.scrollTo.js"></script>
+
+    </form>
+</body>
+</html>
